@@ -46,10 +46,13 @@ h4 {
 
 nav {
   display: block;
-  float: right;
-  margin: 4px 6px 0 0;
+  position: absolute;
+  top: 16px;
+  right: 8%;
+  margin: 0 auto;
   padding: 4px 12px;
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  transition: all 0.25s ease-in; }
   nav:after {
     content: "";
     display: table;
@@ -76,7 +79,7 @@ nav {
       padding: 0; }
       nav li, nav li a {
         padding-left: 0;
-        padding-right: 6px; } }
+        padding-right: 8px; } }
   @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
     nav {
       font-size: 1rem;
@@ -87,20 +90,29 @@ nav {
         padding-right: 6px; } }
   @media screen and (max-width: 35.4375rem) {
     nav {
-      display: none; } }
+      position: fixed;
+      top: -60px;
+      font-size: 1rem;
+      left: 0;
+      right: 0;
+      padding: 0;
+      background-color: rgba(255, 255, 255, 0.75); }
+      nav li, nav li a {
+        padding-left: 0;
+        padding-right: 6px; } }
 
 .menu-btn {
-  float: right;
-  margin: .5rem .5rem 0 0;
+  position: fixed;
+  top: 6px;
+  right: 12px;
   padding: .5rem 1rem;
   border: 2px solid #1D3557;
   border-radius: 4px;
   text-align: center;
-  display: none; }
-  .menu-btn:after {
-    content: "";
-    display: table;
-    clear: both; }
+  display: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s ease-in; }
   @media screen and (max-width: 35.4375rem) {
     .menu-btn {
       display: block; } }
@@ -108,6 +120,15 @@ nav {
 .menu-btn:hover {
   background-color: #1D3557;
   color: white; }
+
+#menu-toggle {
+  display: none; }
+
+#menu-toggle:checked + .menu-btn {
+  top: 80px; }
+
+#menu-toggle:checked ~ nav {
+  top: 0; }
 
 .hero-banner {
   width: 100vw;
