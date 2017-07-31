@@ -76,7 +76,8 @@ nav {
     nav {
       font-size: 1rem;
       margin: 0 auto;
-      padding: 0; }
+      padding: 0;
+      top: 6px; }
       nav li, nav li a {
         padding-left: 0;
         padding-right: 8px; } }
@@ -84,7 +85,8 @@ nav {
     nav {
       font-size: 1rem;
       margin: 0 auto;
-      padding: 0; }
+      padding: 0;
+      top: 6px; }
       nav li, nav li a {
         padding-left: 0;
         padding-right: 6px; } }
@@ -106,6 +108,7 @@ nav {
   top: 6px;
   right: 12px;
   padding: .5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid #1D3557;
   border-radius: 4px;
   text-align: center;
@@ -135,7 +138,6 @@ nav {
   height: 75vh;
   background: url("../images/woman-drilling.jpg") no-repeat center center fixed;
   background-size: cover;
-  overflow: hidden;
   z-index: -1;
   overflow: hidden; }
   @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
@@ -168,7 +170,9 @@ nav {
   @media screen and (max-width: 35.4375rem) {
     .hero-info {
       top: 20%;
-      right: 0; } }
+      left: 2%;
+      padding-right: 6px;
+      color: white; } }
 
 .hero-heading {
   font-family: "objektiv-mk2", sans-serif;
@@ -184,15 +188,15 @@ nav {
       font-size: 3rem; } }
   @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
     .hero-heading {
-      font-size: 2rem; } }
+      font-size: 2.5rem; } }
   @media screen and (max-width: 35.4375rem) {
     .hero-heading {
-      font-size: 2rem; } }
+      font-size: 2.5rem; } }
 
 .static-phone {
   position: fixed;
-  max-width: 20%;
-  left: 12%;
+  max-width: 300px;
+  left: 18%;
   top: 17%;
   z-index: 10; }
   @media screen and (max-width: 35.4375rem) {
@@ -230,26 +234,45 @@ nav {
       background: url(../images/screen-network.jpg) center center no-repeat;
       background-size: contain;
       opacity: 0; }
+    .static-phone .phone-screen:nth-of-type(6) {
+      background: url(../images/launch-screen.jpg) center center no-repeat;
+      background-size: contain;
+      opacity: 0; }
+  @media screen and (min-width: 63.75rem) {
+    .static-phone {
+      left: 8%; } }
+  @media screen and (min-width: 48rem) and (max-width: 63.6875rem) {
+    .static-phone {
+      left: 4%; } }
+  @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
+    .static-phone {
+      left: 6%;
+      max-width: 200px; } }
 
 .scroll-parent {
   position: relative; }
 
 .scroll-watcher {
   position: absolute;
-  top: 600px;
-  background: red; }
+  width: 300px; }
 
-.static-bg-phone1 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url(../images/challenges-screen.png) no-repeat;
-  background-size: auto 100%;
-  z-index: 0; }
-  .static-bg-phone1 img {
-    max-width: 100%;
-    height: auto;
-    display: block; }
+.top-watcher {
+  top: 400px; }
+
+.hiw-watcher {
+  top: 300px; }
+
+.showtell-watcher {
+  top: 300px; }
+
+.emojivoting-watcher {
+  top: 300px; }
+
+.community-watcher {
+  top: 250px; }
+
+.getapp-watcher {
+  top: 300px; }
 
 .container {
   margin: 0 auto;
@@ -258,31 +281,53 @@ nav {
 .section-title {
   text-align: center;
   text-transform: uppercase; }
+  @media screen and (min-width: 48rem) and (max-width: 63.6875rem) {
+    .section-title {
+      padding-left: 3rem; } }
+  @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
+    .section-title {
+      padding-left: 3rem; } }
 
 .content-info {
   float: right;
   padding: 24px; }
+  .content-info:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .content-section {
   padding-left: 28rem;
   margin-bottom: 24rem; }
   @media screen and (min-width: 48rem) and (max-width: 63.6875rem) {
     .content-section {
-      padding-left: 20rem; } }
+      padding-left: 24rem; } }
   @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
     .content-section {
-      padding-left: 17rem; } }
+      padding-left: 18rem; } }
   @media screen and (max-width: 35.4375rem) {
     .content-section {
       padding-left: 1rem; } }
 
 .community {
+  max-width: 100%;
+  height: 28rem;
+  margin-bottom: 12rem;
   padding-top: 2rem;
-  border: 1px solid green;
   background: url(../images/community-2.jpg) no-repeat center center fixed;
   background-size: cover;
-  overflow: hidden;
   z-index: -1; }
+  .community h1, .community h3, .community p, .community span {
+    color: white; }
+  @media screen and (max-width: 35.4375rem) {
+    .community {
+      margin-bottom: 2rem; } }
+
+.pad-top {
+  padding-top: 4rem; }
+
+.tighten-up {
+  margin-bottom: 12rem; }
 
 .sketch {
   position: relative;
@@ -311,6 +356,52 @@ nav {
     background-color: #A8DADC;
     opacity: .8;
     z-index: -1; }
+
+.app-icon {
+  float: left;
+  padding: 2rem 1rem 2rem 0;
+  max-width: 12rem; }
+  .app-icon img {
+    max-width: 100%;
+    height: auto;
+    display: block; }
+  .app-icon:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media screen and (min-width: 48rem) and (max-width: 63.6875rem) {
+    .app-icon {
+      max-width: 8rem; } }
+  @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
+    .app-icon {
+      max-width: 8rem; } }
+
+.app-store {
+  display: table-cell;
+  margin-top: 2.75rem;
+  float: left;
+  max-width: 200px;
+  vertical-align: middle; }
+  .app-store:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .app-store a {
+    display: block;
+    padding: 1rem; }
+  .app-store img {
+    display: block;
+    max-width: 100%; }
+  @media screen and (min-width: 48rem) and (max-width: 63.6875rem) {
+    .app-store {
+      max-width: 10rem; }
+      .app-store a {
+        padding: .5rem; } }
+  @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
+    .app-store {
+      max-width: 10rem; }
+      .app-store a {
+        padding: .5rem; } }
 
 footer, footer p {
   margin-top: 3em;
