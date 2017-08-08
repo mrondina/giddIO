@@ -1,7 +1,7 @@
 // Import vars
 @import "_variables.scss";
 @import "_mixins.scss";
-@import "_nanoreset.min.css";
+@import "_tinyreset-min.scss";
 
 // * {
 // 	border: 1px dotted $brand-primary-action;
@@ -11,16 +11,20 @@ body, p {
 	font-family: $brand-base-font-family;
 	font-size: $brand-base-font-size;
 	color: $brand-primary-dark;
+	line-height: $line-height;
 }
 
 //------------------------- HEADINGS --------------------- //
 h1, h2, h3, h4, h5 {
 	font-family: $brand-base-font-family;
 	font-weight: $heading-weight;
+
 }
 h1 {
 	//text-transform: uppercase;
+	padding: 1rem .5rem;
 	font-weight: 400;
+	font-size: 2.25rem;
 }
 
 h2 {
@@ -34,9 +38,19 @@ h4 {
 	font-size: 1.25rem;
 	font-weight: 400;
 	text-transform: uppercase;
+	padding-bottom: 1rem;
 }
 
-
+.top-bar {
+	margin: 0 auto;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 1);
+	border-bottom: 1px solid $brand-primary-dark;
+	z-index: 100;
+}
 
 #logo { 
 	float: left;
@@ -62,13 +76,15 @@ nav {
 	right: 8%;
 	margin: 0 auto;
 	padding: 4px 12px;
-	font-size: 1.25rem;
+	font-size: 1.5rem;
     @include all-ease-in;
 	@include clearfix;
 	@include list-no-style;
 	li, li a {
 		margin: 0 auto;
-		padding: 0 12px 2px 5px;
+		padding: 0 0 2px 0;
+		margin-left: 5px;
+		margin-right: 12px;
 		display: inline-block;
 		text-align: center;
 	}
@@ -77,25 +93,34 @@ nav {
 		text-decoration: none;
 		color: $brand-primary-dark;
 	}
-	.active {
+	a:hover {
 		color: $brand-primary-action;
+	}
+	.active span{
+		font-weight: 600;
 		border-bottom: 4px solid $brand-primary-action; 
 	}
+	@include breakpoint(laptop) {
+		font-size: $heading-sm;
+		top: 1.5rem;
+		right: 2%;
+	}
 	@include breakpoint(large-tablet) {
-		font-size: 1rem;
+		font-size: $default;
 		margin: 0 auto;
 		padding: 0;
-		top: 6px;
+		top: 1rem;
+		right: 4%;
 		li, li a {
 			padding-left:0;
 			padding-right: 8px;
 		}
 	}
 	@include breakpoint(phablet) {
-		font-size: 1rem;
+		font-size: $default;
 		margin: 0 auto;
 		padding: 0;
-		top: 6px;
+		top: .5rem;
 		li, li a {
 			padding-left:0;
 			padding-right: 6px;
@@ -104,13 +129,14 @@ nav {
 
 	@include breakpoint(mobile-only) {
 		position: fixed;
-		top: -60px;
+		top: -80px;
 		font-size: 1rem;
 		left: 0;
 		right: 0;
 		padding: 0;
 		background-color: rgba(255, 255, 255, .75);
 		li, li a {
+			display: block;
 			padding-left:0;
 			padding-right: 6px;
 		}
@@ -121,7 +147,7 @@ nav {
 	position: fixed;
 	top: 6px;
 	right: 12px;
-	padding: .5rem 1rem;
+	padding: .25rem .5rem;
 	background-color: rgba(255, 255, 255, .5);
 	border: 2px solid $brand-primary-dark;
 	border-radius: 4px;
@@ -152,7 +178,8 @@ nav {
 #menu-toggle:checked ~ nav { top: 0; }
 
 .hero-banner {
-	width: 100vw;
+	margin-top: 4rem;
+	width: 100%;
 	height: 75vh;
 	background: url("../images/woman-drilling.jpg") no-repeat center center fixed;
 	@include img-full-center;
@@ -197,9 +224,10 @@ nav {
 }
 
 .hero-heading {
+	line-height: 3.5rem;
 	font-family: $brand-base-font-family;
 	font-weight: 400;
-	//color: white;
+	line-height: $hero-line-height-xl;
 	@include breakpoint(desktop) {
 		font-size: $hero-xl;
 	}
@@ -271,19 +299,20 @@ nav {
 		}
 
 		&:nth-of-type(6) {
-			background: url(../images/launch-screen.jpg) center center no-repeat;
+			background: url(../images/launch-screen.png) center center no-repeat;
 			background-size: contain;
 			opacity: 0;
 		}
 	}
 	@include breakpoint(xl) {
-		
+		left: 24%;
 	}
 	@include breakpoint(desktop) {
+		left: 16%;
 		
 	}
 	@include breakpoint(laptop) {
-		left: 8%;
+		left: 10%;
 	}
 	@include breakpoint(large-tablet) {
 		left: 4%;
@@ -341,13 +370,13 @@ nav {
 		
 	}
 	@include breakpoint(laptop) {
-		
+		padding-left: 10rem;
 	}
 	@include breakpoint(large-tablet) {
-		padding-left: 3rem;
+		padding-left: 22rem;
 	}
 	@include breakpoint(phablet) {
-		padding-left: 3rem;
+		padding-left: 10rem;
 	}
 	@include breakpoint(mobile-only) {
 		
@@ -374,11 +403,11 @@ nav {
 		padding-left: 24rem;
 	}
 	@include breakpoint(phablet) {
-		padding-left: 18rem;
+		padding-left: 22rem;
 	}
 	@include breakpoint(mobile-only) {
 		padding-left: 1rem;
-		//margin-bottom: 12rem;
+		margin-bottom: 18rem;
 	}
 }
 
@@ -406,9 +435,42 @@ nav {
 
 	}
 	@include breakpoint(mobile-only) {
-		margin-bottom: 2rem;
+		margin-bottom: 4rem;
+		background: url(../images/community-2-sm.jpg) no-repeat center center fixed;
+		@include img-full-center;
 	}
 }
+
+.giddy-counter {
+	counter-reset: li;
+}
+
+.large-number-list {
+	display: block;
+	padding: 2rem 0 2rem 6rem;
+	&::before {
+		content: counter(li);
+		counter-increment: li;
+		-moz-box-sizing:border-box;
+	    -webkit-box-sizing:border-box;
+	    box-sizing:border-box;
+		position: absolute;
+		margin-top: -8px;
+		margin-left: -3rem;
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		background-color: $brand-primary-action;
+		border: 2px solid white;
+		border-radius: 50%;
+		color: white;
+		font-size: $heading-sm;
+		font-weight: 600;
+		text-align: center;
+
+	}
+}
+
 
 .pad-top {
 	padding-top: 4rem;
@@ -439,6 +501,17 @@ nav {
 		opacity: .8;
 		z-index: -1;
 	}
+	@include breakpoint(mobile-only) {
+		margin-right: 2rem;
+		width: 250px;
+		height: auto;
+		&:before {
+			width: 100%;
+			height: 180px;
+			margin: 0 auto;
+			margin-top: 3rem;
+		}
+	}
 }
 
 .app-icon {
@@ -454,7 +527,7 @@ nav {
 		max-width: 8rem;
 	}
 	@include breakpoint(mobile-only) {
-		
+		max-width: 8rem;
 	}
 }
 
@@ -485,6 +558,12 @@ nav {
 			padding: .5rem;
 		}
 	}
+	@include breakpoint(mobile-only) {
+		max-width: 10rem;
+		a {
+			padding: .25rem;
+		}
+	}
 }
 
 footer, footer p {
@@ -500,10 +579,21 @@ footer, footer p {
 		padding: .25em .5em;
 
 	}
+	@include breakpoint(mobile-only) {
+		margin-top: -4rem;;
+	}
 
 }
-
+.location {
+	margin: 1rem .5rem;
+	@include breakpoint(mobile-only) {
+		text-align: center;
+	}
+}
 .social-links {
+	margin: 0 auto;
+	margin-top: 1rem;
+	padding: 0;
 	text-align: center;
 }
 

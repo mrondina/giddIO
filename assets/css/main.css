@@ -1,15 +1,46 @@
-@import url(_nanoreset.min.css);
+/*! tinyreset.css v0.1.0 | github.com/shankariyerr/tinyreset */
+a, abbr, acronym, address, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, ol, output, p, pre, q, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote::after, blockquote::before, q::after, q::before {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 body, p {
   font-family: "objektiv-mk2", sans-serif;
   font-size: 1rem;
-  color: #1D3557; }
+  color: #1D3557;
+  line-height: 1.5; }
 
 h1, h2, h3, h4, h5 {
   font-family: "objektiv-mk2", sans-serif;
   font-weight: 600; }
 
 h1 {
-  font-weight: 400; }
+  padding: 1rem .5rem;
+  font-weight: 400;
+  font-size: 2.25rem; }
 
 h2 {
   font-size: 1.625rem; }
@@ -20,7 +51,18 @@ h3 {
 h4 {
   font-size: 1.25rem;
   font-weight: 400;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  padding-bottom: 1rem; }
+
+.top-bar {
+  margin: 0 auto;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #1D3557;
+  z-index: 100; }
 
 #logo {
   float: left;
@@ -51,7 +93,7 @@ nav {
   right: 8%;
   margin: 0 auto;
   padding: 4px 12px;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   transition: all 0.25s ease-in; }
   nav:after {
     content: "";
@@ -62,22 +104,32 @@ nav {
     list-style: none; }
   nav li, nav li a {
     margin: 0 auto;
-    padding: 0 12px 2px 5px;
+    padding: 0 0 2px 0;
+    margin-left: 5px;
+    margin-right: 12px;
     display: inline-block;
     text-align: center; }
   nav a, nav a:visited {
     text-transform: uppercase;
     text-decoration: none;
     color: #1D3557; }
-  nav .active {
-    color: #E63946;
+  nav a:hover {
+    color: #E63946; }
+  nav .active span {
+    font-weight: 600;
     border-bottom: 4px solid #E63946; }
+  @media screen and (min-width: 63.75rem) {
+    nav {
+      font-size: 1.25rem;
+      top: 1.5rem;
+      right: 2%; } }
   @media screen and (min-width: 48rem) and (max-width: 63.6875rem) {
     nav {
       font-size: 1rem;
       margin: 0 auto;
       padding: 0;
-      top: 6px; }
+      top: 1rem;
+      right: 4%; }
       nav li, nav li a {
         padding-left: 0;
         padding-right: 8px; } }
@@ -86,20 +138,21 @@ nav {
       font-size: 1rem;
       margin: 0 auto;
       padding: 0;
-      top: 6px; }
+      top: .5rem; }
       nav li, nav li a {
         padding-left: 0;
         padding-right: 6px; } }
   @media screen and (max-width: 35.4375rem) {
     nav {
       position: fixed;
-      top: -60px;
+      top: -80px;
       font-size: 1rem;
       left: 0;
       right: 0;
       padding: 0;
       background-color: rgba(255, 255, 255, 0.75); }
       nav li, nav li a {
+        display: block;
         padding-left: 0;
         padding-right: 6px; } }
 
@@ -107,7 +160,7 @@ nav {
   position: fixed;
   top: 6px;
   right: 12px;
-  padding: .5rem 1rem;
+  padding: .25rem .5rem;
   background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid #1D3557;
   border-radius: 4px;
@@ -134,7 +187,8 @@ nav {
   top: 0; }
 
 .hero-banner {
-  width: 100vw;
+  margin-top: 4rem;
+  width: 100%;
   height: 75vh;
   background: url("../images/woman-drilling.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -175,8 +229,10 @@ nav {
       color: white; } }
 
 .hero-heading {
+  line-height: 3.5rem;
   font-family: "objektiv-mk2", sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  line-height: 1.25; }
   @media screen and (min-width: 63.75rem) and (max-width: 74.9375rem) {
     .hero-heading {
       font-size: 4.5rem; } }
@@ -235,12 +291,18 @@ nav {
       background-size: contain;
       opacity: 0; }
     .static-phone .phone-screen:nth-of-type(6) {
-      background: url(../images/launch-screen.jpg) center center no-repeat;
+      background: url(../images/launch-screen.png) center center no-repeat;
       background-size: contain;
       opacity: 0; }
+  @media screen and (min-width: 75rem) {
+    .static-phone {
+      left: 24%; } }
+  @media screen and (min-width: 63.75rem) and (max-width: 74.9375rem) {
+    .static-phone {
+      left: 16%; } }
   @media screen and (min-width: 63.75rem) {
     .static-phone {
-      left: 8%; } }
+      left: 10%; } }
   @media screen and (min-width: 48rem) and (max-width: 63.6875rem) {
     .static-phone {
       left: 4%; } }
@@ -281,12 +343,15 @@ nav {
 .section-title {
   text-align: center;
   text-transform: uppercase; }
+  @media screen and (min-width: 63.75rem) {
+    .section-title {
+      padding-left: 10rem; } }
   @media screen and (min-width: 48rem) and (max-width: 63.6875rem) {
     .section-title {
-      padding-left: 3rem; } }
+      padding-left: 22rem; } }
   @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
     .section-title {
-      padding-left: 3rem; } }
+      padding-left: 10rem; } }
 
 .content-info {
   float: right;
@@ -304,10 +369,11 @@ nav {
       padding-left: 24rem; } }
   @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
     .content-section {
-      padding-left: 18rem; } }
+      padding-left: 22rem; } }
   @media screen and (max-width: 35.4375rem) {
     .content-section {
-      padding-left: 1rem; } }
+      padding-left: 1rem;
+      margin-bottom: 18rem; } }
 
 .community {
   max-width: 100%;
@@ -321,7 +387,34 @@ nav {
     color: white; }
   @media screen and (max-width: 35.4375rem) {
     .community {
-      margin-bottom: 2rem; } }
+      margin-bottom: 4rem;
+      background: url(../images/community-2-sm.jpg) no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1; } }
+
+.giddy-counter {
+  counter-reset: li; }
+
+.large-number-list {
+  display: block;
+  padding: 2rem 0 2rem 6rem; }
+  .large-number-list::before {
+    content: counter(li);
+    counter-increment: li;
+    box-sizing: border-box;
+    position: absolute;
+    margin-top: -8px;
+    margin-left: -3rem;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #E63946;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center; }
 
 .pad-top {
   padding-top: 4rem; }
@@ -356,6 +449,16 @@ nav {
     background-color: #A8DADC;
     opacity: .8;
     z-index: -1; }
+  @media screen and (max-width: 35.4375rem) {
+    .sketch {
+      margin-right: 2rem;
+      width: 250px;
+      height: auto; }
+      .sketch:before {
+        width: 100%;
+        height: 180px;
+        margin: 0 auto;
+        margin-top: 3rem; } }
 
 .app-icon {
   float: left;
@@ -373,6 +476,9 @@ nav {
     .app-icon {
       max-width: 8rem; } }
   @media screen and (min-width: 35.5rem) and (max-width: 47.9375rem) {
+    .app-icon {
+      max-width: 8rem; } }
+  @media screen and (max-width: 35.4375rem) {
     .app-icon {
       max-width: 8rem; } }
 
@@ -402,6 +508,11 @@ nav {
       max-width: 10rem; }
       .app-store a {
         padding: .5rem; } }
+  @media screen and (max-width: 35.4375rem) {
+    .app-store {
+      max-width: 10rem; }
+      .app-store a {
+        padding: .25rem; } }
 
 footer, footer p {
   margin-top: 3em;
@@ -422,8 +533,20 @@ footer, footer p {
   footer li, footer li a, footer p li, footer p li a {
     display: inline-block;
     padding: .25em .5em; }
+  @media screen and (max-width: 35.4375rem) {
+    footer, footer p {
+      margin-top: -4rem; } }
+
+.location {
+  margin: 1rem .5rem; }
+  @media screen and (max-width: 35.4375rem) {
+    .location {
+      text-align: center; } }
 
 .social-links {
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 0;
   text-align: center; }
 
 @media screen and (max-width: 35.4375rem) {
