@@ -51,9 +51,9 @@
 }
 
 @mixin all-ease-in {
-	-webkit-transition: all 0.25s ease-in;
-    -moz-transition: all 0.25s ease-in;
-    transition: all 0.25s ease-in;
+	-webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
 }
 
 @mixin all-ease-out {

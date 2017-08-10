@@ -113,23 +113,27 @@ nav {
 		right: 4%;
 		li, li a {
 			padding-left:0;
-			padding-right: 8px;
+			padding-right: 0;
 		}
 	}
 	@include breakpoint(phablet) {
-		font-size: $default;
-		margin: 0 auto;
+		position: fixed;
+		top: -300px;
+		font-size: 1rem;
+		left: 0;
+		right: 0;
 		padding: 0;
-		top: .5rem;
+		background-color: rgba(255, 255, 255, .75);
 		li, li a {
-			padding-left:0;
-			padding-right: 6px;
+			display: block;
+			padding: .5rem 0;
+			font-size: $heading-md;
 		}
 	}
 
 	@include breakpoint(mobile-only) {
 		position: fixed;
-		top: -80px;
+		top: -300px;
 		font-size: 1rem;
 		left: 0;
 		right: 0;
@@ -156,6 +160,9 @@ nav {
 	cursor: pointer;
 	z-index: 10;
 	@include all-ease-in;
+	@include breakpoint(phablet) {
+		display: block;
+	}
 	@include breakpoint(mobile-only) {
 		display: block;
 	}
@@ -173,7 +180,7 @@ nav {
 // 	transition: top .25s ease-out;
 // }
  
-#menu-toggle:checked + .menu-btn { top: 80px; }
+#menu-toggle:checked + .menu-btn { /*top: 80px;*/ }
  
 #menu-toggle:checked ~ nav { top: 0; }
 
@@ -251,7 +258,11 @@ nav {
 	left: 18%;
 	top: 17%;
     z-index: 10;
-
+    @include breakpoint(xl) {
+		// margin-top: 2%;
+		margin-left: 4%;
+		max-width: 380px;
+	}
 	@include breakpoint(mobile-only) {
 		display: none;
 	}
@@ -422,11 +433,11 @@ nav {
 	h1, h3, p, span {
 		color: white;
 	}
-	@include breakpoint(desktop) {
-		
+	@include breakpoint(xl) {
+		margin-bottom: 14rem;
 	}
 	@include breakpoint(laptop) {
-		
+		margin-bottom: 8rem;
 	}
 	@include breakpoint(large-tablet) {
 
@@ -455,6 +466,8 @@ nav {
 	    -webkit-box-sizing:border-box;
 	    box-sizing:border-box;
 		position: absolute;
+		padding-top: 2px;
+		padding-left: 1px;
 		margin-top: -8px;
 		margin-left: -3rem;
 		display: inline-block;

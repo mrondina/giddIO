@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta name="description" content="Demo project">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="assets/js/velocity.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 		<script src="https://use.typekit.net/jqa5eop.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 		<link rel="stylesheet" href="assets/css/normalize.css">
@@ -42,7 +42,7 @@
 					<nav>
 						<ul>
 							<li class="active"><a href="#about"><span>About</span></a></li>
-							<li id="how-it-works"><a href="#"><span>How It Works</span></a></li>
+							<li><a href="#how-it-works"><span>How It Works</span></a></li>
 							<li><a href="#community"><span>Community</span></a></li>
 							<li><a href="#download"><span>Get Giddy</span></a></li>
 						</ul>
@@ -133,7 +133,7 @@
 			</div>
 		
 
-			<div class="pure-g ">
+			<div class="pure-g">
 				<div class="pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-1" id="download">
 					<h1 class="section-title">Get Started Now!</h1>
 				</div>
@@ -164,7 +164,7 @@
 				<div class="pure-u-sm-1-1 pure-u-ph-1-2 pure-u-md-5-8 pure-u-lg-5-6 social-links">
 					<h4>Connect With Us!</h4>
 					<ul>
-						<li><a href=""><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.facebook.com/giddy.io/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
 						<li><a href=""><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
 						<li><a href=""><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
 					</ul>
@@ -218,9 +218,49 @@
             startWatching();
 		</script>
 		<script type="text/javascript">
+			var navSelector = 'nav li'
+			$(navSelector).on('click', function() {
+				$(navSelector).removeClass('active');
+				$(this).addClass('active');
+				// close the menu which is driven by a checkbox
+				$("#menu-toggle").prop("checked", false)
+			});
 
-        // insert scroll animation here
-
+			
+			$('a[href*="#"]')
+			  // Remove links that don't actually link to anything
+			  .not('[href="#"]')
+			  .not('[href="#0"]')
+			  .click(function(event) {
+			    // On-page links
+			    if (
+			      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+			      && 
+			      location.hostname == this.hostname
+			    ) {
+			      // Figure out element to scroll to
+			      var target = $(this.hash);
+			      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			      // Does a scroll target exist?
+			      if (target.length) {
+					if( window.innerWidth < 567 ){
+					    addedOffset = 0;
+					}else{
+					    var addedOffset = 200;
+					} 
+			        // Only prevent default if animation is actually gonna happen
+			        event.preventDefault();
+			        $('html, body').animate({
+			          scrollTop: target.offset().top - addedOffset
+			        }, 1000, function() {
+			          // Callback after animation
+			          // Must change focus!
+			          var $target = $(target);
+			        
+			        });
+			      }
+			    }
+			  });
 		</script>
 
 	</body>
