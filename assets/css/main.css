@@ -141,7 +141,7 @@ nav {
       left: 0;
       right: 0;
       padding: 0;
-      background-color: rgba(255, 255, 255, 0.75); }
+      background-color: rgba(255, 255, 255, 0.95); }
       nav li, nav li a {
         display: block;
         padding: .5rem 0;
@@ -157,8 +157,8 @@ nav {
       background-color: rgba(255, 255, 255, 0.75); }
       nav li, nav li a {
         display: block;
-        padding-left: 0;
-        padding-right: 6px; } }
+        padding: .5rem 0;
+        font-size: 1.625rem; } }
 
 .menu-btn {
   position: fixed;
@@ -567,6 +567,12 @@ footer, footer p {
   margin-top: 1rem;
   padding: 0;
   text-align: center; }
+  .social-links li a {
+    text-decoration: none; }
+  .social-links li a:hover {
+    color: #E63946;
+    text-decoration: none;
+    border: none; }
 
 @media screen and (max-width: 35.4375rem) {
   .pure-u-sm-1,
