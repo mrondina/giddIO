@@ -501,18 +501,45 @@ nav {
 	@include pure-img;
 	@include clearfix;
 
-	&:before {
+	&#challenge:before {
 		content: '';
 		position: absolute;
 		display: inline-block;
-		width: 400px;
-		height: 225px;
-		margin-top: 2rem;
-		margin-left: -24%;
+		width: 300px;
+		height: 150px;
+		// margin-top: 1rem;
+		// margin-left: -2rem;
 		border-radius: .5rem;
 		background-color: $brand-primary-light;
 		opacity: .8;
 		z-index: -1;
+	}
+	&#idea:before {
+			content: '';
+			position: absolute;
+			display: inline-block;
+			width: 300px;
+			height: 275px;
+			margin-top: 2rem;
+			// margin-left: -24%;
+			border-radius: .5rem;
+			background-color: $brand-secondary-light;
+			opacity: .8;
+			z-index: -1;
+		
+	}
+	&#vote:before {
+			content: '';
+			position: absolute;
+			display: inline-block;
+			width: 250px;
+			height: 250px;
+			margin-top: 4rem;
+			margin-left: 1.5rem;
+			border-radius: 50%;
+			background-color: $brand-primary-light;
+			opacity: .8;
+			z-index: -1;
 	}
 	@include breakpoint(mobile-only) {
 		margin-right: 2rem;

@@ -456,15 +456,36 @@ nav {
     content: "";
     display: table;
     clear: both; }
-  .sketch:before {
+  .sketch#challenge:before {
     content: '';
     position: absolute;
     display: inline-block;
-    width: 400px;
-    height: 225px;
-    margin-top: 2rem;
-    margin-left: -24%;
+    width: 300px;
+    height: 150px;
     border-radius: .5rem;
+    background-color: #A8DADC;
+    opacity: .8;
+    z-index: -1; }
+  .sketch#idea:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 300px;
+    height: 275px;
+    margin-top: 2rem;
+    border-radius: .5rem;
+    background-color: #F1FAEE;
+    opacity: .8;
+    z-index: -1; }
+  .sketch#vote:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    margin-top: 4rem;
+    margin-left: 1.5rem;
+    border-radius: 50%;
     background-color: #A8DADC;
     opacity: .8;
     z-index: -1; }
