@@ -1,0 +1,36 @@
+@import "_tinyreset-min.scss";
+@import "_grids-responsive-min.scss";
+@import "_mixins.scss";
+
+* {
+  box-sizing: border-box;
+
+}
+
+img { @include pure-img; }
+.l-box { padding: .1875em .75em; }
+.featured img { @include img-fit-center; }
+.rounded { border-radius: 4px; }
+.circle { border-radius: 50%;}
+.card { 
+	background-color: #A8DADC; 
+	//min-width: 180px;
+	height: 242px;
+	padding-top: 6px;
+	padding-bottom: 3px;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.tall-card { 
+	background-color: #A8DADC;
+	border-bottom: 24px grey;
+	//min-width: 316px;
+	height: 535px;
+};
+.short-card { 
+	background-color: #A8DADC;
+	border-bottom: 24px grey;
+	//min-width: 316px;
+	height: 389px;
+};

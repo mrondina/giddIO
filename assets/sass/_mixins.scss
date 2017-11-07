@@ -68,7 +68,7 @@
 @mixin breakpoint($point) {
    @if $point == xl {
    	// larger than 1200px
-	 @media screen and (min-width: 75rem) { @content ; }
+	 @media screen and (min-width: 80rem) { @content ; }
   }
    @else if $point == desktop {
    	// 1020 px - 1199 px

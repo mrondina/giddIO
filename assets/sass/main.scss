@@ -118,7 +118,7 @@ nav {
 	}
 	@include breakpoint(phablet) {
 		position: fixed;
-		top: -300px;
+		top: -350px;
 		font-size: 1rem;
 		left: 0;
 		right: 0;
@@ -133,7 +133,7 @@ nav {
 
 	@include breakpoint(mobile-only) {
 		position: fixed;
-		top: -300px;
+		top: -350px;
 		font-size: 1rem;
 		left: 0;
 		right: 0;
@@ -262,6 +262,11 @@ nav {
 		// margin-top: 2%;
 		margin-left: 4%;
 		max-width: 380px;
+	}
+	  @include breakpoint(xl) {
+		// margin-top: 2%;
+		margin-left: 4%;
+		max-width: 300px;
 	}
 	@include breakpoint(mobile-only) {
 		display: none;
@@ -404,8 +409,11 @@ nav {
 .content-section {
 	padding-left: 28rem;
 	margin-bottom: 24rem;
+	@include breakpoint(xl) {
+		padding-left:30rem;
+	}
 	@include breakpoint(desktop) {
-		
+		padding-left: 30rem;
 	}
 	@include breakpoint(laptop) {
 		
